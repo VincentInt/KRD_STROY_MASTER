@@ -57,20 +57,71 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: clamp(5px, 1.6vw, 10px) clamp(10px, 10vw, 200px);
+    padding: clamp(10px, 1.6vw, 15px) clamp(10px, 10vw, 200px);
     color: white;
     .logo {
       img {
-        width: clamp(70px, 15vw, 160px);
+        width: clamp(90px, 15vw, 160px);
+      }
+    }
+    .btn_burger {
+      display: none;
+      outline: none;
+      border: 0;
+      background-color: transparent;
+      img {
+        width: 25px;
       }
     }
     nav {
       display: flex;
       gap: clamp(8px, 2vw, 45px);
       a {
-        font-size: clamp(11px, 2.5vw, 20px);
+        font-size: clamp(14px, 2.7vw, 20px);
         color: white;
         transition: all 0.5s ease;
+        &:hover {
+          text-shadow: 0px 5px 15px rgba(255, 255, 255, 0.5);
+          transform: scale(105%);
+        }
+      }
+    }
+  }
+}
+.burger_menu {
+  z-index: 10000000;
+  position: fixed;
+  /* display: flex; */
+  display: none;
+  justify-content: end;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(30, 30, 30, 0.4);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  .nav_btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    height: 100vh;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgb(30, 30, 30);
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 40px 40px;
+      a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: clamp(22px, 4.7vw, 26px);
+        color: white;
+        transition: all 0.5s ease;
+        img {
+          width: 25px;
+        }
         &:hover {
           text-shadow: 0px 5px 15px rgba(255, 255, 255, 0.5);
           transform: scale(105%);
@@ -655,7 +706,7 @@ footer {
 @media (max-width: 960px) {
   header {
     .container_header {
-      padding: clamp(5px, 1.4vw, 10px) clamp(10px, 5vw, 200px);
+      padding: 10px clamp(10px, 5vw, 200px);
     }
   }
   section {
@@ -717,10 +768,16 @@ footer {
     }
   }
 }
-@media (max-width: 420px) {
+@media (max-width: 520px) {
   header {
     .container_header {
-      padding: clamp(5px, 1.4vw, 10px) clamp(10px, 2vw, 200px);
+      padding: 10px clamp(10px, 2vw, 200px);
+      .nav_button {
+        display: none;
+      }
+      .btn_burger {
+        display: block;
+      }
     }
   }
   section {

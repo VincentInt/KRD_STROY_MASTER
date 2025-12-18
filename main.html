@@ -17,6 +17,35 @@
     </title>
   </head>
   <body>
+    <div id="burger_menu" class="burger_menu">
+      <nav class="nav_btn">
+        <div>
+          <a href="#section_project">Проекты</a>
+          <a href="#section_advantage">Выгода</a>
+          <a href="#section_about_me">Обо мне</a>
+          <a href="#section_stages">Этапы</a>
+          <a href="#section_contact">Контакты</a>
+        </div>
+        <div>
+          <a href="">
+            <img src="./img/icon/icons8-телеграм-50.png" alt="telegram_img" />
+            Телеграмм</a
+          >
+          <a href=""
+            ><img
+              src="./img/icon/icons8-whatsapp-50.png"
+              alt="whatsapp_img"
+            />Ватцап</a
+          >
+          <a href=""
+            ><img
+              src="./img/icon/icons8-телефон-50.png"
+              alt="phone_img"
+            />Телефон</a
+          >
+        </div>
+      </nav>
+    </div>
     <div id="modal_window" class="modal_window_project">
       <button id="close_modal" class="btn_close">
         <img src="./img/icon/icons8-крестик-78.png" alt="close_img" />
@@ -38,13 +67,16 @@
         <a class="logo" href="#">
           <img src="./img/logo.svg" alt="logo_img" />
         </a>
-        <nav>
+        <nav class="nav_button">
           <a href="#section_project">Проекты</a>
           <a href="#section_advantage">Выгода</a>
           <a href="#section_about_me">Обо мне</a>
           <a href="#section_stages">Этапы</a>
           <a href="#section_contact">Контакты</a>
         </nav>
+        <button id="btn_burger" class="btn_burger">
+          <img src="./img/icon/icons8-меню-50 (1).png" alt="burger_menu_img" />
+        </button>
       </div>
     </header>
     <section class="section_banner">
@@ -71,7 +103,7 @@
       <h2 class="title">Проекты</h2>
       <div id="container_projects" class="container_projects"></div>
     </section>
-    <section id="section_advantage" class="section_advantage">
+    <!-- <section id="section_advantage" class="section_advantage">
       <h2 class="title">
         Работа напрямую с мастером — <span> ваша выгода!</span>
       </h2>
@@ -170,7 +202,7 @@
           <img src="./img/project/20250501_104131.jpg" alt="my_img" />
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- <section id="section_stages"  class="section_stages">
       <h2 class="title">Этапы работы</h2>
       <div class="container_stages">
@@ -255,4 +287,5 @@
     </footer> -->
   </body>
   <script type="module" src="./js/project.js"></script>
+  <script type="module" src="./js/burgerMenu.js"></script>
 </html>

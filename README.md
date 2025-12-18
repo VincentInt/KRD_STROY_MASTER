@@ -1,0 +1,1 @@
+# KRD_STROY_MASTER

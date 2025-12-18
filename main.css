@@ -8,7 +8,7 @@ html {
   scroll-behavior: smooth;
 }
 h1 {
-  font-size: clamp(24px, 4vw, 56px);
+  font-size: clamp(28px, 5vw, 56px);
 }
 h2 {
   font-size: clamp(20px, 2.6vw, 46px);
@@ -192,6 +192,7 @@ footer {
     );
   }
   .container_img {
+    overflow: hidden;
     z-index: -1;
     position: absolute;
     width: 100%;
@@ -208,7 +209,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    gap: clamp(10px, 1.6vw, 20px);
+    gap: clamp(15px, 1.6vw, 30px);
     padding: 0px clamp(10px, 10vw, 200px);
     h1,
     p,
@@ -219,8 +220,8 @@ footer {
       font-weight: 600;
     }
     p {
-      line-height: clamp(18px, 4.5vw, 42px);
-      font-size: clamp(14px, 4vw, 32px);
+      line-height: clamp(22px, 4.5vw, 42px);
+      font-size: clamp(20px, 4vw, 32px);
       font-weight: 200;
       color: rgb(255, 255, 255);
       text-wrap: wrap;
@@ -228,8 +229,8 @@ footer {
     a {
       width: fit-content;
       margin-top: clamp(10px, 2vw, 20px);
-      padding: clamp(10px, 2.5vw, 15px) clamp(25px, 6.2vw, 45px);
-      font-size: clamp(16px, 4vw, 32px);
+      padding: clamp(12px, 2.5vw, 15px) clamp(30px, 6.2vw, 45px);
+      font-size: clamp(22px, 5vw, 32px);
       font-weight: 500;
       border: 0;
       border-radius: clamp(8px, 3vw, 16px);
@@ -715,6 +716,11 @@ footer {
   .section_banner {
     .container_text {
       padding: 0px clamp(10px, 5vw, 200px);
+    }
+    .container_img {
+      img {
+
+      }
     }
   }
   .section_projects {

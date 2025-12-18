@@ -306,7 +306,7 @@ footer {
         position: relative;
         display: flex;
         width: clamp(200px, 35vw, 700px);
-        height: clamp(200px, 45vw, 700px);
+        height: clamp(200px, 45vw, 650px);
         .btn_magnifying_glass {
           position: absolute;
           display: flex;
@@ -440,18 +440,18 @@ footer {
 }
 .section_advantage {
   .container_advantage_card {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(10px, 5vw, 180px);
     .card {
-      max-width: 550px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       width: fit-content;
-      padding: 30px;
-      gap: 30px;
+      padding: clamp(3px, 2vw, 40px);
+      gap: clamp(12px, 2.8vw, 30px);
       border: 1px solid rgba(255, 255, 255, 0.153);
-      border-radius: 16px;
+      border-radius: clamp(12px, 2.4vw, 24px);
       &:nth-child(1) {
         filter: grayscale(100%);
         .container_name_card {
@@ -459,10 +459,6 @@ footer {
             background-color: rgb(255, 255, 255);
             h3 {
               color: rgb(30, 30, 30);
-            }
-            img {
-              width: 52px;
-              height: 42px;
             }
           }
         }
@@ -475,10 +471,6 @@ footer {
             h3 {
               color: rgb(30, 30, 30);
             }
-            img {
-              width: 45px;
-              height: 35px;
-            }
           }
         }
       }
@@ -490,32 +482,32 @@ footer {
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: 12px 25px;
-          gap: 10px;
-          border-radius: 16px;
+          padding: clamp(5px, 1.1vw, 12px) clamp(15px, 2vw, 25px);
+          gap: clamp(2px, 1.2vw, 10px);
+          border-radius: clamp(8px, 2vw, 16px);
           h3 {
             font-weight: 500;
+            font-size: clamp(11px, 2vw, 32px);
           }
           img {
-            width: 45px;
-            height: 35px;
+            width: clamp(12px, 2vw, 35px);
+            height: clamp(15px, 2vw, 35px);
             object-fit: contain;
           }
         }
       }
       img {
-        width: 550px;
-        height: 350px;
+        width: 100%;
+        height: clamp(150px, 25vw, 450px);
         object-fit: cover;
         border-radius: 16px;
       }
       ul {
         list-style-type: "— ";
-        padding-left: 20px;
+        padding-left: 2vw;
         li {
-          font-size: 20px;
-          font-weight: 400;
-          line-height: 32px;
+          font-size: clamp(9px, 1.5vw, 24px);
+          line-height: clamp(12px, 2.3vw, 36px);
           text-wrap: wrap;
         }
       }
@@ -717,6 +709,11 @@ footer {
           }
         }
       }
+    }
+  }
+  .section_advantage {
+    .container_advantage_card {
+      gap: clamp(10px, 3vw, 180px);
     }
   }
 }

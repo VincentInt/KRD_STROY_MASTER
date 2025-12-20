@@ -99,32 +99,35 @@ header {
   background-color: rgb(30, 30, 30, 0.4);
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
-  .nav_btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  .container_content {
     width: 70%;
     height: 100vh;
     border: 1px solid rgba(255, 255, 255, 0.2);
     background-color: rgb(30, 30, 30);
-    div {
+    .nav_btn {
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      padding: 40px 40px;
-      a {
+      justify-content: space-between;
+      height: 100%;
+      div {
         display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: clamp(22px, 4.7vw, 26px);
-        color: white;
-        transition: all 0.5s ease;
-        img {
-          width: 25px;
-        }
-        &:hover {
-          text-shadow: 0px 5px 15px rgba(255, 255, 255, 0.5);
-          transform: scale(105%);
+        flex-direction: column;
+        gap: 15px;
+        padding: 40px 40px;
+        a {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: clamp(22px, 4.7vw, 26px);
+          color: white;
+          transition: all 0.5s ease;
+          img {
+            width: 25px;
+          }
+          &:hover {
+            text-shadow: 0px 5px 15px rgba(255, 255, 255, 0.5);
+            transform: scale(105%);
+          }
         }
       }
     }
@@ -306,7 +309,6 @@ footer {
           font-size: clamp(22px, 1.5vw, 24px);
           line-height: clamp(24px, 1.8vw, 28px);
           color: rgb(163, 163, 163);
-  
         }
         .container_param {
           display: grid;

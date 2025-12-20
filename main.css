@@ -223,8 +223,8 @@ footer {
       font-weight: 600;
     }
     p {
-      line-height: clamp(22px, 4.5vw, 42px);
-      font-size: clamp(20px, 4vw, 32px);
+      line-height: clamp(24px, 4.5vw, 42px);
+      font-size: clamp(16px, 5vw, 32px);
       font-weight: 200;
       color: rgb(255, 255, 255);
       text-wrap: wrap;
@@ -232,7 +232,7 @@ footer {
     a {
       width: fit-content;
       margin-top: clamp(10px, 2vw, 20px);
-      padding: clamp(12px, 2.5vw, 15px) clamp(30px, 6.2vw, 45px);
+      padding: clamp(8px, 1.1vw, 12px) clamp(20px, 2vw, 25px);
       font-size: clamp(22px, 5vw, 32px);
       font-weight: 500;
       border: 0;
@@ -307,7 +307,7 @@ footer {
           padding-left: clamp(4%, 2vw, 2.5%);
           font-weight: 400;
           font-size: clamp(22px, 1.5vw, 24px);
-          line-height: clamp(24px, 1.8vw, 28px);
+          line-height: clamp(24px, 1.8vw, 30px);
           color: rgb(163, 163, 163);
         }
         .container_param {
@@ -568,7 +568,7 @@ footer {
           list-style-type: "— ";
           font-weight: 400;
           font-size: clamp(22px, 1.5vw, 24px);
-          line-height: clamp(24px, 1.8vw, 28px);
+          line-height: clamp(26px, 2vw, 34px);
           text-wrap: wrap;
         }
       }
@@ -578,40 +578,39 @@ footer {
 .section_about_me {
   .container_about_me {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 2fr 3fr;
     justify-content: space-between;
-    gap: 60px;
+    gap: clamp(40px, 2.5vw, 70px);
     div {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      &:nth-child(1) {
+      gap: clamp(20px, 2vw, 70px);
+      &:nth-child(2) {
         ul {
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          padding-left: clamp(4%, 2vw, 2.5%);
+          gap: clamp(2px, 1.2vw, 8px);
           list-style-type: "— ";
-          padding-left: 20px;
-          li {
-            font-size: 22px;
-            font-weight: 400;
-            line-height: 32px;
-            text-wrap: wrap;
-          }
+          text-wrap: wrap;
+          font-weight: 400;
+          font-size: clamp(22px, 1.5vw, 24px);
+          line-height: clamp(24px, 1.8vw, 32px);
         }
         p {
-          font-size: 22px;
+          text-align: justify;
           font-weight: 400;
-          line-height: 28px;
+          font-size: clamp(22px, 1.5vw, 26px);
+          line-height: clamp(28px, 2vw, 38px);
         }
       }
-      &:nth-child(2) {
+      &:nth-child(1) {
         display: flex;
         flex-direction: row;
-        justify-content: right;
+        justify-content: left;
         img {
-          width: 580px;
-          height: 530px;
+          width: clamp(300px, 35vw, 650px);
+          height: clamp(300px, 40vw, 600px);
           object-fit: cover;
           border-radius: 16px;
         }
@@ -727,8 +726,6 @@ footer {
       padding: 0px clamp(10px, 5vw, 200px);
     }
     .container_img {
-      img {
-      }
     }
   }
   .section_projects {
@@ -770,7 +767,7 @@ footer {
           }
           ul {
             font-size: clamp(16px, 3.2vw, 28px);
-            line-height: clamp(18px, 3.4vw, 32px);
+            line-height: clamp(22px, 3.4vw, 32px);
             padding-left: 5%;
           }
         }
@@ -786,7 +783,7 @@ footer {
           width: clamp(300px, 80vw, 600px);
           ul {
             font-size: clamp(16px, 3.2vw, 28px);
-            line-height: clamp(20px, 4.4vw, 32px);
+            line-height: clamp(22px, 4.4vw, 32px);
             padding-left: 5%;
           }
           .img {
@@ -798,6 +795,34 @@ footer {
               object-fit: cover;
               border-radius: 16px;
             }
+          }
+        }
+      }
+    }
+  }
+  .section_about_me {
+    .container_about_me {
+      grid-template-columns: 1fr;
+      div {
+        &:nth-child(2) {
+          ul {
+            padding-left: clamp(4%, 2vw, 2.5%);
+            gap: clamp(2px, 1.2vw, 8px);
+            font-size: clamp(16px, 3.2vw, 28px);
+            line-height: clamp(22px, 4.4vw, 32px);
+            padding-left: 5%;
+          }
+          p {
+            font-size: clamp(17px, 3.2vw, 29px);
+            line-height: clamp(23px, 4.4vw, 38px);
+          }
+        }
+        &:nth-child(1) {
+          flex-direction: row;
+          justify-content: center;
+          img {
+            width: clamp(300px, 90vw, 682px);
+            height: clamp(300px, 80vw, 630px);
           }
         }
       }
@@ -828,7 +853,19 @@ footer {
     .container_advantage_card {
       .container_card {
         .card {
-          width: 100%
+          width: 100%;
+        }
+      }
+    }
+  }
+  .section_about_me {
+    .container_about_me {
+      div {
+        &:nth-child(1) {
+          img {
+            width: 100%;
+            height: clamp(300px, 80vw, 630px);
+          }
         }
       }
     }

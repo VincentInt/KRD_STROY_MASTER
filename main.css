@@ -17,7 +17,7 @@ h3 {
   font-size: clamp(20px, 3vw, 32px);
 }
 h4 {
-  font-size: 26px;
+  font-size: clamp(18px, 3vw, 26px);
 }
 h5 {
   font-size: 22px;
@@ -624,12 +624,16 @@ footer {
     flex-direction: column;
     gap: 20px;
     div {
-      padding: 12px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: clamp(12px, 2vw, 16px) clamp(20px, 4vw, 35px);
       border: 1px solid rgba(255, 255, 255, 0.153);
-      border-radius: 16px;
+      border-radius: clamp(12px, 2vw, 16px);
       p {
         font-weight: 300;
-        font-size: 24px;
+        font-size: clamp(22px, 1.5vw, 24px);
+        line-height: clamp(24px, 1.8vw, 32px);
       }
     }
   }
@@ -824,6 +828,16 @@ footer {
             width: clamp(300px, 90vw, 682px);
             height: clamp(300px, 80vw, 630px);
           }
+        }
+      }
+    }
+  }
+  .section_stages {
+    .container_stages {
+      div {
+        p {
+          font-size: clamp(16px, 3.2vw, 28px);
+          line-height: clamp(22px, 4.4vw, 32px);
         }
       }
     }

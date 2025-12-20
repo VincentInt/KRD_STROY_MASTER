@@ -20,7 +20,7 @@ h4 {
   font-size: clamp(18px, 3vw, 26px);
 }
 h5 {
-  font-size: 22px;
+  font-size: clamp(14px, 3vw, 24px);
 }
 h6 {
   font-size: 18px;
@@ -626,7 +626,7 @@ footer {
     div {
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 10px;
       padding: clamp(12px, 2vw, 16px) clamp(20px, 4vw, 35px);
       border: 1px solid rgba(255, 255, 255, 0.153);
       border-radius: clamp(12px, 2vw, 16px);
@@ -640,22 +640,22 @@ footer {
 }
 .section_contact {
   .container_contact {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: clamp(15px, 3vw, 120px);
     a {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 30px;
-      width: 300px;
-      gap: 15px;
+      width: 100%;
+      padding: clamp(10px, 3vw, 40px) 0px;
+      gap: clamp(10px, 2vw, 15px);
       border: 1px solid rgba(255, 255, 255, 0.153);
       border-radius: 16px;
       transition: all 0.5s ease;
       img {
-        width: 80px;
-        height: 80px;
+        width: clamp(50px, 9vw, 100px);
+        height: clamp(50px, 9vw, 100px);
         object-fit: contain;
       }
       &:hover {

@@ -137,7 +137,7 @@ section {
   padding: 50px clamp(10px, 8vw, 200px);
 }
 footer {
-  padding: 20px 200px;
+  padding: clamp(10px, 1.6vw, 15px) clamp(10px, 8vw, 200px);
 }
 .modal_window_project {
   z-index: 50000;
@@ -668,18 +668,19 @@ footer {
 }
 footer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-top: 100px;
+  grid-template-columns: 1fr 3fr 1fr;
+  margin-top: clamp(50px, 15vw, 100px);
+  gap: clamp(10px, 3vw, 30px);
   border: 1px solid rgba(255, 255, 255, 0.153);
   img {
-    width: 160px;
+    width: clamp(100px, 15vw, 160px);
   }
   .container_contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    gap: 10px;
+    gap: clamp(5px, 2vw, 10px);
     .support {
       display: flex;
       align-items: center;
@@ -699,9 +700,14 @@ footer {
     display: flex;
     align-items: center;
     justify-content: right;
-    gap: 30px;
-    font-size: 20px;
+    flex-wrap: wrap;
+    gap: clamp(8px, 2.2vw, 30px);
+    font-size: clamp(22px, 1.5vw, 24px);
+    line-height: clamp(24px, 1.8vw, 32px);
     font-weight: 300;
+    &:nth-child(2) {
+      justify-content: center;
+    }
     a {
       img {
         width: 25px;
@@ -717,6 +723,18 @@ footer {
   }
 }
 @media (max-width: 1200px) {
+  footer {
+    grid-template-columns: 1fr;
+    padding: 10px clamp(10px, 5vw, 200px);
+    .flex {
+      justify-content: start;
+      font-size: clamp(16px, 3.2vw, 28px);
+      line-height: clamp(22px, 4.4vw, 32px);
+      &:nth-child(2) {
+        justify-content: start;
+      }
+    }
+  }
   header {
     .container_header {
       padding: 10px clamp(10px, 5vw, 200px);

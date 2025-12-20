@@ -497,17 +497,12 @@ footer {
   .container_advantage_card {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: clamp(10px, 5vw, 180px);
-    .card {
-      overflow: hidden;
+    gap: clamp(40px, 5vw, 180px);
+    .container_card {
       display: flex;
-      flex-direction: column;
-      width: fit-content;
-      padding: clamp(3px, 2vw, 40px);
-      gap: clamp(12px, 2.8vw, 30px);
-      border: 1px solid rgba(255, 255, 255, 0.153);
-      border-radius: clamp(12px, 2.4vw, 24px);
-      &:nth-child(1) {
+      justify-content: center;
+      width: 100%;
+      .diss {
         filter: grayscale(100%);
         .container_name_card {
           div {
@@ -518,7 +513,7 @@ footer {
           }
         }
       }
-      &:nth-child(2) {
+      .like {
         .container_name_card {
           div {
             background-color: rgb(255, 179, 0);
@@ -529,40 +524,51 @@ footer {
           }
         }
       }
-      .container_name_card {
+      .card {
+        overflow: hidden;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        div {
+        flex-direction: column;
+        padding: clamp(20px, 5vw, 40px);
+        gap: clamp(18px, 2.8vw, 30px);
+        border: 1px solid rgba(255, 255, 255, 0.153);
+        border-radius: clamp(12px, 2.4vw, 24px);
+        .container_name_card {
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: clamp(5px, 1.1vw, 12px) clamp(15px, 2vw, 25px);
-          gap: clamp(2px, 1.2vw, 10px);
-          border-radius: clamp(8px, 2vw, 16px);
-          h3 {
-            font-weight: 500;
-            font-size: clamp(11px, 2vw, 32px);
-          }
-          img {
-            width: clamp(12px, 2vw, 35px);
-            height: clamp(15px, 2vw, 35px);
-            object-fit: contain;
+          div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: clamp(8px, 1.1vw, 12px) clamp(20px, 2vw, 25px);
+            gap: clamp(2px, 1.2vw, 10px);
+            border-radius: clamp(12px, 2vw, 16px);
+            img {
+              width: clamp(15px, 6vw, 35px);
+              height: clamp(18px, 6vw, 35px);
+              object-fit: contain;
+            }
           }
         }
-      }
-      img {
-        width: 100%;
-        height: clamp(150px, 25vw, 450px);
-        object-fit: cover;
-        border-radius: 16px;
-      }
-      ul {
-        list-style-type: "— ";
-        padding-left: 2vw;
-        li {
-          font-size: clamp(9px, 1.5vw, 24px);
-          line-height: clamp(12px, 2.3vw, 36px);
+        .img {
+          width: 100%;
+          height: clamp(250px, 25vw, 500px);
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+          }
+        }
+        ul {
+          display: flex;
+          flex-direction: column;
+          padding-left: clamp(4%, 2vw, 2.5%);
+          gap: clamp(2px, 1.2vw, 8px);
+          list-style-type: "— ";
+          font-weight: 400;
+          font-size: clamp(22px, 1.5vw, 24px);
+          line-height: clamp(24px, 1.8vw, 28px);
           text-wrap: wrap;
         }
       }
@@ -773,7 +779,28 @@ footer {
   }
   .section_advantage {
     .container_advantage_card {
-      gap: clamp(10px, 3vw, 180px);
+      grid-template-columns: 1fr;
+      justify-content: center;
+      .container_card {
+        .card {
+          width: clamp(300px, 80vw, 600px);
+          ul {
+            font-size: clamp(16px, 3.2vw, 28px);
+            line-height: clamp(20px, 4.4vw, 32px);
+            padding-left: 5%;
+          }
+          .img {
+            width: 100%;
+            height: clamp(250px, 45vw, 500px);
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              border-radius: 16px;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -795,6 +822,15 @@ footer {
   .section_banner {
     .container_text {
       padding: 0px clamp(10px, 2vw, 200px);
+    }
+  }
+  .section_advantage {
+    .container_advantage_card {
+      .container_card {
+        .card {
+          width: 100%
+        }
+      }
     }
   }
 }

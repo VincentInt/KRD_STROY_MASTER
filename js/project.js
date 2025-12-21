@@ -11,9 +11,17 @@ const rigthBtnModalWindowElem = document.getElementById("rigth_modal_btn");
 
 closeBtnModalWindowElem.onclick = () => {
   statusModalOpen = false;
-  indexProjectModal = null
+  indexProjectModal = null;
   onModal();
 };
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeModal();
+});
+window.addEventListener("popstate", () => {
+  closeModal();
+});
+
 leftBtnModalWindowElem.onclick = () => onMoveModalSlider(-1);
 rigthBtnModalWindowElem.onclick = () => onMoveModalSlider(1);
 
@@ -24,16 +32,20 @@ let indexLoad = 1;
 let statusModalOpen = false;
 let indexProjectModal = null;
 
+function closeModal() {
+  history.back();
+  statusModalOpen = false;
+  onModal();
+}
 function renderImg() {
-  const indexSlide = dataModalSlider[indexProjectModal].indexSlide
-  const slides = dataModalSlider[indexProjectModal].slider
-  imgModalWindowElem.attributes[1].value = slides[indexSlide]
+  const indexSlide = dataModalSlider[indexProjectModal].indexSlide;
+  const slides = dataModalSlider[indexProjectModal].slider;
+  imgModalWindowElem.attributes[1].value = slides[indexSlide];
 }
 function onMoveModalSlider(move) {
   const dataModal = dataModalSlider[indexProjectModal];
   const indexSlide = dataModal.indexSlide + move;
-  console.log(indexSlide);
-  
+
   if (indexSlide < 0) {
     dataModalSlider[indexProjectModal].indexSlide = dataModal.slider.length - 1;
   } else if (indexSlide >= dataModal.slider.length) {
@@ -46,12 +58,15 @@ function onMoveModalSlider(move) {
 function onModal() {
   if (statusModalOpen && indexProjectModal !== null) {
     document.body.style.overflowY = "hidden";
+    document.body.style.WebkitOverflowScrolling = "auto";
     modalWindowElem.style.display = "flex";
+    history.pushState({ modal: true }, "", "#modal-open");
   } else {
     document.body.style.overflowY = "scroll";
+    document.body.style.WebkitOverflowScrolling = "";
     modalWindowElem.style.display = "none";
   }
-  renderImg()
+  renderImg();
 }
 function onMoreBtn(def = (indexLoad += 1)) {
   indexLoad = def;
@@ -153,7 +168,7 @@ function renderProject() {
   containerProjects.removeEventListener("click", onClickMove);
   containerProjects.removeEventListener("keydown", onKeyDownMove);
   dataSlider.forEach((item, index) => {
-    if (indexLoad * 3 < index + 1) {
+    if (indexLoad * 2 < index + 1) {
       if (dataSlider.length - 1 === index) {
         containerProjects.insertAdjacentHTML(
           "beforeend",
@@ -260,7 +275,7 @@ function renderProject() {
 
   containerProjects.addEventListener("click", onClickMove);
   containerProjects.addEventListener("keydown", onKeyDownMove);
-  if (indexLoad * 3 > dataSlider.length && dataSlider.length > 3) {
+  if (indexLoad * 2 > dataSlider.length && dataSlider.length > 2) {
     containerProjects.insertAdjacentHTML(
       "beforeend",
       `<div class="container_btn_more">

@@ -10,6 +10,7 @@ function onClickBtn(status) {
   if (statusOpen) {
     burgerMenuElem.style.display = "flex";
     document.body.style.overflowY = "hidden";
+    document.body.style.WebkitOverflowScrolling = "auto";
     burgerMenuElem.onclick = (e) => {
       if (e.target === burgerMenuElem || e.target.localName === "a") {
         onClickBtn(false);
@@ -18,5 +19,6 @@ function onClickBtn(status) {
   } else {
     burgerMenuElem.style.display = "none";
     document.body.style.overflowY = "scroll";
+    document.body.style.WebkitOverflowScrolling = "";
   }
 }

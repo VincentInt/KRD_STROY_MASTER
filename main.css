@@ -770,10 +770,8 @@ footer {
           line-height: clamp(24px, 1.8vw, 32px);
         }
         p {
-          text-align: justify;
           font-weight: 400;
           font-size: clamp(22px, 1.5vw, 26px);
-          line-height: clamp(28px, 2vw, 38px);
         }
       }
       &:nth-child(1) {
@@ -781,8 +779,8 @@ footer {
         flex-direction: row;
         justify-content: left;
         img {
-          width: clamp(300px, 35vw, 650px);
-          height: clamp(300px, 40vw, 600px);
+          width:  100%;
+          height: clamp(300px, 40vw, 580px);
           object-fit: cover;
           border-radius: 16px;
         }

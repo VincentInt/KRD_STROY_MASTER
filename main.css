@@ -220,7 +220,7 @@ footer {
       flex-wrap: wrap;
       gap: clamp(10px, 2vw, 40px);
       h4 {
-        padding: 12px 25px;
+        position: relative;
         padding: clamp(8px, 1.2vw, 12px) clamp(15px, 3vw, 25px);
         font-weight: 400;
         letter-spacing: 1.2px;
@@ -231,6 +231,14 @@ footer {
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         box-shadow: 0px 5px 11px rgba(255, 255, 255, 0.1);
+        &:nth-child(1) {
+          &::after {
+            content: "2";
+            position: absolute;
+            top: 20%;
+            font-size: clamp(14px, 1.5vw, 16px);
+          }
+        }
       }
     }
     h1,
@@ -243,7 +251,7 @@ footer {
     }
     a {
       width: fit-content;
-      padding: clamp(8px, 1.2vw, 15px) clamp(20px, 3vw, 45px);
+      padding: clamp(8px, 1.2vw, 12px) clamp(20px, 3vw, 45px);
       font-size: clamp(20px, 3vw, 32px);
       font-weight: 400;
       border: 1px solid rgba(255, 255, 255, 0.2);
@@ -510,6 +518,140 @@ footer {
     }
   }
 }
+.sectuon_cost_calculation {
+  .container_cost_calculation {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: clamp(8px, 3vw, 16px);
+    border-collapse: collapse;
+    .container_count {
+      display: flex;
+      justify-content: space-between;
+      padding: clamp(12px, 1.2vw, 20px) clamp(15px, 3vw, 25px);
+      background-color: rgb(246, 115, 0);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: clamp(8px, 3vw, 16px) clamp(8px, 3vw, 16px) 0px 0px;
+      h3 {
+        font-weight: 400;
+      }
+    }
+    .container_text {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 0 clamp(15px, 3vw, 25px);
+      .text_type {
+        font-weight: 400;
+      }
+      .error {
+        color: red;
+      }
+    }
+    .container_flex_type {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      padding: clamp(20px, 4vw, 40px) clamp(15px, 3vw, 25px);
+      padding-top: 0;
+      gap: 15px;
+      .container_type {
+        display: grid;
+        align-items: center;
+        gap: clamp(8px, 2vw, 15px);
+        .house {
+          grid-area: house;
+        }
+        .apartment {
+          grid-area: apartment;
+        }
+        .office {
+          grid-area: office;
+        }
+        .com_premises {
+          grid-area: com_premises;
+        }
+        .do50 {
+          grid-area: do50;
+        }
+        .ot50do100 {
+          grid-area: ot50do100;
+        }
+        .ot100do500 {
+          grid-area: ot100do500;
+        }
+        .bolee500 {
+          grid-area: bolee500;
+        }
+        .ranche {
+          grid-area: ranche;
+        }
+        .herez12 {
+          grid-area: herez12;
+        }
+        .polgoda {
+          grid-area: polgoda;
+        }
+        .herezgod {
+          grid-area: herezgod;
+        }
+        .num {
+          text-align: center;
+          grid-area: num;
+        }
+        .squre {
+          position: relative;
+          &::after {
+            content: "2";
+            position: absolute;
+            top: 20%;
+            font-size: clamp(14px, 1.5vw, 16px);
+          }
+        }
+      }
+      .container_btn {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: clamp(8px, 2vw, 15px);
+        button {
+          padding: clamp(8px, 1.2vw, 12px) clamp(25px, 3vw, 55px);
+          &:last-child {
+            background-color: rgb(246, 115, 0);
+            &:hover {
+              transform: scale(105%);
+              background-color: white;
+              color: black;
+            }
+          }
+        }
+      }
+      .active {
+        transform: scale(105%);
+        background-color: white;
+        color: black;
+      }
+      button {
+        position: relative;
+        padding: clamp(8px, 1.2vw, 12px) clamp(15px, 3vw, 25px);
+        text-wrap: nowrap;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: rgb(30, 30, 30, 0.4);
+        color: white;
+        transition: all 0.5s ease;
+        font-size: clamp(14px, 3vw, 24px);
+        font-weight: 400;
+        letter-spacing: 1.2px;
+        &:hover {
+          transform: scale(105%);
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+  }
+}
 .section_advantage {
   .container_advantage_card {
     display: grid;
@@ -613,9 +755,9 @@ footer {
         ul {
           display: flex;
           flex-direction: column;
-          padding-left: clamp(4%, 2vw, 2.5%);
+          padding-left: 3%;
           gap: clamp(2px, 1.2vw, 8px);
-          list-style-type: "— ";
+          list-style-type: "✔ ";
           text-wrap: wrap;
           font-weight: 400;
           font-size: clamp(22px, 1.5vw, 24px);
@@ -922,6 +1064,17 @@ footer {
             width: 100%;
             height: clamp(300px, 80vw, 630px);
           }
+        }
+      }
+    }
+  }
+  .sectuon_cost_calculation {
+    .container_cost_calculation {
+      .container_flex_type {
+        grid-template-columns: 1fr;
+        .container_btn {
+          flex-direction: row;
+          justify-content: center;
         }
       }
     }

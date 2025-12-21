@@ -33,6 +33,7 @@ let statusModalOpen = false;
 let indexProjectModal = null;
 
 function closeModal() {
+  event.preventDefault();
   history.back();
   statusModalOpen = false;
   onModal();

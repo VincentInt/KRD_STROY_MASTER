@@ -50,7 +50,7 @@ let indexCost = 0;
 function onMove(move, type) {
   let index = indexCost + move;
   if (index >= 0 && index <= dateHTML.length) {
-    if (calculation[indexCost] || type === "back") {
+    if (calculation[indexCost] !== undefined || type === "back") {
       costErrorElem.innerHTML = "";
       indexCost = index;
       render();

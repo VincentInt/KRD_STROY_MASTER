@@ -14,14 +14,6 @@ closeBtnModalWindowElem.onclick = () => {
   indexProjectModal = null;
   onModal();
 };
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") closeModal();
-});
-window.addEventListener("popstate", () => {
-  closeModal();
-});
-
 leftBtnModalWindowElem.onclick = () => onMoveModalSlider(-1);
 rigthBtnModalWindowElem.onclick = () => onMoveModalSlider(1);
 
@@ -32,12 +24,6 @@ let indexLoad = 1;
 let statusModalOpen = false;
 let indexProjectModal = null;
 
-function closeModal() {
-  event.preventDefault();
-  history.back();
-  statusModalOpen = false;
-  onModal();
-}
 function renderImg() {
   const indexSlide = dataModalSlider[indexProjectModal].indexSlide;
   const slides = dataModalSlider[indexProjectModal].slider;

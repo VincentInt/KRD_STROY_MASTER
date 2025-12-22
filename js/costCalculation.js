@@ -7,17 +7,29 @@ const costBtnBack = (document.getElementById("cost_btn_back").onclick = () =>
 const costBtnNext = (document.getElementById("cost_btn_next").onclick = () =>
   onMove(1, "next"));
 
-const datePrice = [
-  [1000, 2000, 3000, 4000],
-  [1000, 2000, 3000, 4000],
-  [1000, 2000, 3000, 4000],
-];
+const datePrice = {
+  tariff: [10000, 14000, 19000],
+  type: [
+    [0, 0, 0],
+    [0, 0, 0],
+    [-2000, 0, 0],
+    [-2000, -2000, -2000],
+  ],
+  square: [50, 75, 350, 700],
+};
 const dateType = [
+  "Выберите тариф ремонта",
   "Для какого объекта требуется ремонт?",
   "Какая площадь объекта?",
   "Когда планируете начать ремнот?",
 ];
 const dateHTML = [
+  {
+    html: ` <button id="cost_btn_type 1" class="base">Базовый</button>
+            <button id="cost_btn_type 2" class="premium">Премиум</button>
+            <button id="cost_btn_type 3" class="luks">Люкс</button>`,
+    css: `  "base premium" "luks luks";`,
+  },
   {
     html: ` <button id="cost_btn_type 1" class="house">Дом</button>
             <button id="cost_btn_type 2" class="apartment">Квартира</button>
@@ -61,10 +73,10 @@ function onMove(move, type) {
 }
 function render() {
   if (indexCost > dateHTML.length - 1) {
-    const num = calculation.reduce((acc, item, index) => {
-      acc += datePrice[index][item];
-      return acc;
-    }, 0);
+    const num =
+      (datePrice.tariff[calculation[0]] +
+        datePrice.type[calculation[1]][calculation[0]]) *
+      datePrice.square[calculation[2]];
     countElem.innerHTML = `Рассчет`;
     costTextTypeElem.innerHTML = "Приблизительная стоимость ремонтных работ:";
     costBtnElem.innerHTML = `<h2 class="num">~ ${new Intl.NumberFormat(

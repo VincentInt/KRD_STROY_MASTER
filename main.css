@@ -330,7 +330,7 @@ footer {
           gap: clamp(2px, 1.2vw, 8px);
           padding-left: 0;
           list-style-position: outside;
-          margin-left: 1em; 
+          margin-left: 1em;
           font-weight: 400;
           font-size: clamp(22px, 1.5vw, 24px);
           line-height: clamp(24px, 1.8vw, 30px);
@@ -561,6 +561,15 @@ footer {
         display: grid;
         align-items: center;
         gap: clamp(8px, 2vw, 15px);
+        .base {
+          grid-area: base;
+        }
+        .premium {
+          grid-area: premium;
+        }
+        .luks {
+          grid-area: luks;
+        }
         .house {
           grid-area: house;
         }
@@ -733,7 +742,7 @@ footer {
           flex-direction: column;
           padding-left: 0;
           list-style-position: outside;
-          margin-left: 1em; 
+          margin-left: 1em;
           gap: clamp(2px, 1.2vw, 8px);
           list-style-type: "— ";
           font-weight: 400;
@@ -779,7 +788,7 @@ footer {
         flex-direction: row;
         justify-content: left;
         img {
-          width:  100%;
+          width: 100%;
           height: clamp(300px, 40vw, 580px);
           object-fit: cover;
           border-radius: 16px;
@@ -962,7 +971,7 @@ footer {
             line-height: clamp(22px, 3.4vw, 32px);
             padding-left: 0;
             list-style-position: outside;
-            margin-left: 1em; 
+            margin-left: 1em;
           }
         }
       }

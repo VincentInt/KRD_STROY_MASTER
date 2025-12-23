@@ -162,7 +162,7 @@ function renderProject() {
           `<div class="container_btn_more">
             <button id="btn_more">
               <h6>Показать еще</h6>
-              <img src="./img/icon/icons8-back-50.png"/>
+              <img src="/img/icon/icons8-back-50.png"/>
             </button>
            </div>`
         );
